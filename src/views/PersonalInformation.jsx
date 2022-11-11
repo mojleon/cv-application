@@ -4,12 +4,20 @@ import Textarea from "../components/Textarea";
 import Button from "../components/Button";
 
 class PersonalInformation extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="App">
         <div id="personal-information">
           <h1>Personal Information</h1>
-          <Input placeholder="First name" type="text" />
+          <Input
+            placeholder="First name"
+            type="text"
+            onStateChange={this.props.onStateChange}
+          />
           <Input placeholder="Last name" type="text" />
           <Input placeholder="Title" type="text" />
           <Input placeholder="Title" type="file" />
@@ -26,7 +34,7 @@ class PersonalInformation extends React.Component {
             <Input placeholder="From" type="text" />
             <Input placeholder="To" type="text" />
           </div>
-          <Button value="ADD" />
+          <Button value="ADD" onButtonClicked={this.props.onButtonClicked} />
 
           <h1>Education</h1>
           <Input placeholder="Universtiry name" type="text" />
