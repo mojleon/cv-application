@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Input extends Component {
+class Button extends Component {
   constructor(props) {
     super(props);
   }
@@ -8,10 +8,10 @@ class Input extends Component {
   render() {
     return (
       <div className="input">
-        <input placeholder={this.props.placeholder} type={this.props.type} />
+        <button>{this.props.value}</button>
       </div>
     );
   }
 }
 
-export default Input
+export default Button
