@@ -1,42 +1,61 @@
+main {
+  display: flex;
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+}
 
 #personal-information {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 512px;
-    background-color: #f5f5f5;
-    padding: 32px;
-    gap: 16px;
-    
-    & input, & textarea, & button  {
-        width: calc(100% - 16px);
-        padding-left: 16px;
-        border-radius: 8px;
-        border: none;
-    }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f5f5f5;
+  padding: 32px;
+  gap: 16px;
 
-    & button {
-        height: 48px;
-        width: 100%;
-        padding: 0 16px;
-    }
-
-    & input {
-        height: 48px;
-    }
-
-    & textarea {
-        height: 128px;
-        padding-top: 16px;
-    }
-
-    & .side-by-side-2 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    & input[type="file"] {
-    }
+  & input,
+  & textarea,
+  & button {
+    width: calc(100% - 16px);
+    padding-left: 16px;
+    border-radius: 8px;
+    border: none;
   }
+
+  & button {
+    height: 48px;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  & input {
+    height: 48px;
+  }
+
+  & textarea {
+    height: 128px;
+    padding-top: 16px;
+  }
+
+  & .side-by-side-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  & input[type="file"] {
+  }
+}
+
+#cv-preview {
+  margin: 32px auto;
+  box-sizing: border-box;
+  padding: 32px;
+  width: 892.5px;
+  height: 1263px;
+  border: 1px solid gray;
+
+  & h1 {
+    margin: 0;
+  }
+}
