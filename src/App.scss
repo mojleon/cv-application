@@ -1,3 +1,5 @@
+$a4-width: 892.5px;
+
 main {
   display: flex;
   display: grid;
@@ -56,12 +58,61 @@ main {
 #cv-preview {
   margin: 32px auto;
   box-sizing: border-box;
-  padding: 32px;
-  width: 892.5px;
+  width: $a4-width;
   height: 1263px;
   border: 1px solid gray;
+  position: relative;
 
-  & h1 {
-    margin: 0;
+  & #data {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    height: 100%;
+    z-index: 0;
+
+    & .expertise {
+      background-color: #e4e6e3;
+    }
+
+    & .experience {
+      background-color: #f9f6ef;
+    }
+  }
+  & #extra-details {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: $a4-width;
+
+    & h1,
+    & h2 {
+      margin: 0;
+    }
+
+    & h1 {
+      margin-top: 32px;
+      margin-left: 30%;
+      padding: 24px 0 24px 15%;
+      text-transform: uppercase;
+      background-color: rgba(252, 210, 2, 0.85);
+    }
+
+    & h2 {
+      margin-left: 30%;
+
+      padding: 8px 0 8px 15%;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 100;
+      background-color: rgba(40, 40, 40, 0.85);
+    }
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 80px;
+      width: 227px;
+      height: 310px;
+      background: white;
+    }
   }
 }

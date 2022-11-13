@@ -8,7 +8,19 @@ class CVPreview extends React.Component {
   render() {
     return (
       <div id="cv-preview">
-        <h1>{this.props.state.name}</h1>
+        <div id="data">
+          <div className="expertise"></div>
+          <div className="experience"></div>
+        </div>
+        <div id="extra-details">
+          <div className="yellowLine"></div>
+          <div className="blackLine"></div>
+          <h1>
+            {this.props.state.firstname} {this.props.state.lastname}
+          </h1>
+          <h2>{this.props.state.title}</h2>
+          <img src={this.props.state.image} />
+        </div>
       </div>
     );
   }

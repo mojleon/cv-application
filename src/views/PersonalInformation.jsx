@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Input from "../components/Input";
 import Textarea from "../components/Textarea";
+import Image from "../components/Image";
 import Button from "../components/Button";
 
 class PersonalInformation extends React.Component {
@@ -15,16 +16,40 @@ class PersonalInformation extends React.Component {
           <h1>Personal Information</h1>
           <Input
             placeholder="First name"
-            type="text"
+            name="firstname"
             onStateChange={this.props.onStateChange}
           />
-          <Input placeholder="Last name" type="text" />
-          <Input placeholder="Title" type="text" />
-          <Input placeholder="Title" type="file" />
-          <Input placeholder="Adress" type="text" />
-          <Input placeholder="Phone number" type="text" />
-          <Input placeholder="Email" type="text" />
-          <Textarea placeholder="Description" type="text" />
+          <Input
+            placeholder="Last name"
+            name="lastname"
+            onStateChange={this.props.onStateChange}
+          />
+          <Input
+            placeholder="Title"
+            name="title"
+            onStateChange={this.props.onStateChange}
+          />
+          <Input placeholder="Adress" type="text" name="adress" />
+          <Input
+            placeholder="Phone number"
+            name="phonenumber"
+            onStateChange={this.props.onStateChange}
+          />
+          <Input
+            placeholder="Email"
+            name="email"
+            onStateChange={this.props.onStateChange}
+          />
+          <Textarea
+            placeholder="Description"
+            name="description"
+            onStateChange={this.props.onStateChange}
+          />
+          <Image
+            placeholder="Image"
+            name="image"
+            onImageChange={this.props.onImageChange}
+          />
 
           <h1>Experience</h1>
           <Input placeholder="Position" type="text" />
@@ -45,7 +70,7 @@ class PersonalInformation extends React.Component {
             <Input placeholder="From" type="text" />
             <Input placeholder="To" type="text" />
           </div>
-          <Button value="ADD" />
+          <Button value="ADD" onButtonClicked={this.props.onButtonClicked} />
 
           <h1>Generate</h1>
           <Button value="Generate PDF" />
