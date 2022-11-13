@@ -19,7 +19,9 @@ class CVPreview extends React.Component {
             {this.props.state.firstname} {this.props.state.lastname}
           </h1>
           <h2>{this.props.state.title}</h2>
-          <img src={this.props.state.image} />
+          <div className="image">
+            <img src={this.props.state.image} />
+          </div>
         </div>
       </div>
     );
