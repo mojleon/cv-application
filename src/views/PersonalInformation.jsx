@@ -14,6 +14,7 @@ class PersonalInformation extends React.Component {
       <div className="App">
         <div id="personal-information">
           <h1>Personal Information</h1>
+          <h3>Name and job</h3>
           <Input
             placeholder="First name"
             name="firstname"
@@ -29,7 +30,7 @@ class PersonalInformation extends React.Component {
             name="title"
             onStateChange={this.props.onStateChange}
           />
-          <Input placeholder="Adress" type="text" name="adress" />
+          <h3>Contact information</h3>
           <Input
             placeholder="Phone number"
             name="phonenumber"
@@ -40,11 +41,17 @@ class PersonalInformation extends React.Component {
             name="email"
             onStateChange={this.props.onStateChange}
           />
-          <Textarea
-            placeholder="Description"
-            name="description"
+          <Input
+            placeholder="LinkedIn"
+            name="linkedin"
             onStateChange={this.props.onStateChange}
           />
+          <Input
+            placeholder="Adress"
+            name="adress"
+            onStateChange={this.props.onStateChange}
+          />
+          <h3>Profile picture</h3>
           <Image
             placeholder="Image"
             name="image"

@@ -13,6 +13,8 @@ class App extends React.Component {
       title: "Frontend Developer",
       phonenumber: "0812345678",
       email: "contact@johndoe.com",
+      linkedin: "linkedin.com/in/johndoe",
+      adress: "1234 Street, City, Country",
       description: `Prolific, full stack web developer with a passion for metrics and beating former "best-yets." Prototyped 25 new product features per year for Flexor, Inc. Decreased rework by 22% and costs by 15%. Consistently receive high user experience scores for all web development projects, including a 55% increase for Flexor, Inc. Passionate about building world class web applications. One of my sites received a 2015 Webby for Best Navigation and Structure.`,
       image: null,
     };
