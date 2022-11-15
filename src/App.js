@@ -13,7 +13,9 @@ class App extends React.Component {
       title: "Frontend Developer",
       phonenumber: "0812345678",
       email: "contact@johndoe.com",
-      description: `Prolific, full stack web developer with a passion for metrics and beating former "best-yets." Prototyped 25 new product features per year for Flexor, Inc. Decreased rework by 22% and costs by 15%. Consistently receive high user experience scores for all web development projects, including a 55% increase for Flexor, Inc. Passionate about building world class web applications. One of my sites received a 2015 Webby for Best Navigation and Structure.`,
+      description: ` Working quickly and coming up with ideas is a great passion for mine. I enjoy researching and figuring out how to advance through an application in a logical manner. I also like to illustrate simple vector graphics. 
+      I enjoy HTML, CSS and JS and have immersed myself in the Vuejs framework with Typescript and Sass.
+      Besides my work I also like to ride my bicycle and study to further my web development skills and UX/UI skills.`,
       image: null,
     };
 
