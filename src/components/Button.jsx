@@ -8,7 +8,13 @@ class Button extends Component {
   render() {
     return (
       <div className="input">
-        <button onClick={this.props.onButtonClicked}>{this.props.value}</button>
+        <button
+          onClick={(event) =>
+            this.props.onButtonClicked(event, this.props.type)
+          }
+        >
+          {this.props.value}
+        </button>
       </div>
     );
   }

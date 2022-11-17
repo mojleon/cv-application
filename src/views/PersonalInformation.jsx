@@ -58,15 +58,47 @@ class PersonalInformation extends React.Component {
             onImageChange={this.props.onImageChange}
           />
 
+          <h1>Expertise</h1>
+          <Input placeholder="Expertise" type="text" />
+
           <h1>Experience</h1>
-          <Input placeholder="Position" type="text" />
-          <Input placeholder="Company" type="text" />
-          <Input placeholder="City" type="text" />
+          <Input
+            placeholder="Position"
+            name="position"
+            onStateChange={this.props.onStateChange}
+          />
+          <Input
+            placeholder="Company"
+            name="company"
+            onStateChange={this.props.onStateChange}
+          />
+          <Input
+            placeholder="City"
+            name="city"
+            onStateChange={this.props.onStateChange}
+          />
           <div className="side-by-side-2">
-            <Input placeholder="From" type="text" />
-            <Input placeholder="To" type="text" />
+            <Input
+              placeholder="From"
+              name="from"
+              onStateChange={this.props.onStateChange}
+            />
+            <Input
+              placeholder="To"
+              name="to"
+              onStateChange={this.props.onStateChange}
+            />
           </div>
-          <Button value="ADD" onButtonClicked={this.props.onButtonClicked} />
+          <Textarea
+            placeholder="Description"
+            name="experienceDescription"
+            onStateChange={this.props.onStateChange}
+          />
+          <Button
+            type="experience"
+            value="ADD"
+            onButtonClicked={this.props.onButtonClicked}
+          />
 
           <h1>Education</h1>
           <Input placeholder="Universtiry name" type="text" />
@@ -77,12 +109,15 @@ class PersonalInformation extends React.Component {
             <Input placeholder="From" type="text" />
             <Input placeholder="To" type="text" />
           </div>
-          <Button value="ADD" onButtonClicked={this.props.onButtonClicked} />
+          <Button
+            type="education"
+            value="ADD"
+            onButtonClicked={this.props.onButtonClicked}
+          />
 
           <h1>Generate</h1>
-          <Button value="Generate PDF" />
-          <Button value="Load example" />
-          <Button value="Reset" />
+          <Button type="generate-pdf" value="Generate PDF" />
+          <Button type="reset" value="Reset" />
         </div>
       </div>
     );

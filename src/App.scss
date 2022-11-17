@@ -1,7 +1,7 @@
 $a4-width: 892.5px;
 $path--rel: "../public";
-$alpha-yellow: rgba(252, 210, 2, 0.85);
-$yellow: rgb(252, 210, 2);
+$alpha-yellow: rgba(46, 58, 89, 0.85);
+$yellow: #2e3a59;
 
 main {
   display: flex;
@@ -51,6 +51,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
   }
 
@@ -67,8 +68,9 @@ main {
   position: relative;
 
   & #data {
+    width: 100%;
     display: grid;
-    grid-template-columns: 0.4fr 0.6fr;
+    grid-template-columns: 0.4fr 1fr;
     height: 100%;
     z-index: 0;
 
@@ -82,12 +84,10 @@ main {
 
         & .contact-information {
           width: 100%;
-          padding: 20px 0;
-          padding-left: 10px;
 
           & div {
-            display: grid;
-            grid-template-columns: 0.25fr 0.75fr;
+            display: flex;
+            gap: 16px;
 
             & img {
               width: 40px;
@@ -98,7 +98,17 @@ main {
     }
 
     & .experience {
+      display: relative;
+      width: 100%;
       background-color: #f9f6ef;
+      padding-top: 200px;
+      padding-left: 40px;
+
+      & > div {
+        & h2 {
+          margin: 0;
+        }
+      }
     }
   }
   & #extra-details {
@@ -168,7 +178,7 @@ main {
       }
 
       & h1:last-child {
-        color: $yellow;
+        color: white;
         background: #333;
       }
     }
