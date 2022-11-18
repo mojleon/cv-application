@@ -18,14 +18,16 @@ class App extends React.Component {
       description: `Prolific, full stack web developer with a passion for metrics and beating former "best-yets." Prototyped 25 new product features per year for Flexor, Inc. Decreased rework by 22% and costs by 15%. Consistently receive high user experience scores for all web development projects, including a 55% increase for Flexor, Inc. Passionate about building world class web applications. One of my sites received a 2015 Webby for Best Navigation and Structure.`,
       image: null,
 
-      position: "",
-      company: "",
-      city: "",
-      from: "",
-      to: "",
-      experienceDescription: "",
+      experience: { 
+        position: "",
+        company: "",
+        city: "",
+        from: "",
+        to: "",
+        description: ""
+      },
 
-      experience: [],
+      experiences: [],
     };
 
     this.updateState = this.updateState.bind(this);
@@ -35,32 +37,31 @@ class App extends React.Component {
 
   addExperience() {
     const experience = {
-      position: this.state.position,
-      company: this.state.company,
-      city: this.state.city,
-      from: this.state.from,
-      to: this.state.to,
-      experienceDescription: this.state.experienceDescription,
+      position: this.state.experience.position,
+      company: this.state.experience.company,
+      city: this.state.experience.city,
+      from: this.state.experience.from,
+      to: this.state.experience.to,
+      description: this.state.experience.description,
     };
 
     this.setState({
-      experience: [...this.state.experience, experience],
+      experiences: [...this.state.experiences, experience],
     });
-
+    
     this.clearExperienceValues(experience);
   }
 
   clearExperienceValues(experience) {
     Object.keys(experience).forEach((val) => {
-      this.state[val] = "";
-      document.getElementsByName(val)[0].value = "";
+      this.state.experience[val] = "";
+      document.querySelector(`#personal-information #experience #${[val]}`).value = "";
     });
   }
 
   onClickBtn(event, type) {
     if (type === "experience") return this.addExperience();
     console.log(type);
-    console.log("Button has been clicked!");
   }
 
   onImageChange = (event) => {
@@ -73,9 +74,8 @@ class App extends React.Component {
   };
 
   updateState = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+    if(event.target['data-type'] = "experience") this.setState({experience: { ...this.state.experience, [event.target.name]: event.target.value }});
+    else this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {

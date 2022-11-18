@@ -11,6 +11,7 @@ class Textarea extends Component {
         <textarea
           placeholder={this.props.placeholder}
           name={this.props.name}
+          id={this.props.name}
           onChange={this.props.onStateChange}
         />
       </div>

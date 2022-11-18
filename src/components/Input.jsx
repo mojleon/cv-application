@@ -12,6 +12,8 @@ class Input extends Component {
           onChange={this.props.onStateChange}
           placeholder={this.props.placeholder}
           type={this.props.type}
+          data-type={this.props.dataType}
+          id={this.props.name}
           name={this.props.name}
         />
       </div>

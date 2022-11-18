@@ -39,13 +39,13 @@ class CVPreview extends React.Component {
             <div className="expertise"></div>
           </div>
           <div className="experience">
-            {this.props.state.experience.map((item, index) => (
+            {this.props.state.experiences.map((item, index) => (
               <div key={index}>
                 <h2>{item.position}</h2>
                 <i>
                   {item.company} | {item.company} | {item.from} - {item.to}
                 </i>
-                <p>{item.experienceDescription}</p>
+                <p>{item.description}</p>
               </div>
             ))}
           </div>
