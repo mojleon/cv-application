@@ -18,16 +18,27 @@ class App extends React.Component {
       description: `Prolific, full stack web developer with a passion for metrics and beating former "best-yets." Prototyped 25 new product features per year for Flexor, Inc. Decreased rework by 22% and costs by 15%. Consistently receive high user experience scores for all web development projects, including a 55% increase for Flexor, Inc. Passionate about building world class web applications. One of my sites received a 2015 Webby for Best Navigation and Structure.`,
       image: null,
 
-      experience: { 
+      experience: {
         position: "",
         company: "",
         city: "",
         from: "",
         to: "",
-        description: ""
+        description: "",
       },
 
       experiences: [],
+
+      education: {
+        university: "",
+        city: "",
+        degree: "",
+        subject: "",
+        from: "",
+        to: "",
+      },
+
+      educations: [],
     };
 
     this.updateState = this.updateState.bind(this);
@@ -48,20 +59,48 @@ class App extends React.Component {
     this.setState({
       experiences: [...this.state.experiences, experience],
     });
-    
+
     this.clearExperienceValues(experience);
+  }
+
+  addEducation() {
+    const education = {
+      university: this.state.education.university,
+      city: this.state.education.city,
+      degree: this.state.education.degree,
+      subject: this.state.education.subject,
+      from: this.state.education.from,
+      to: this.state.education.to,
+    };
+
+    this.setState({
+      educations: [...this.state.educations, education],
+    });
+
+    this.clearEducationValues(education);
+  }
+
+  clearEducationValues(education) {
+    Object.keys(education).forEach((val) => {
+      this.state.education[val] = "";
+      document.querySelector(
+        `#personal-information #education #${[val]}`
+      ).value = "";
+    });
   }
 
   clearExperienceValues(experience) {
     Object.keys(experience).forEach((val) => {
       this.state.experience[val] = "";
-      document.querySelector(`#personal-information #experience #${[val]}`).value = "";
+      document.querySelector(
+        `#personal-information #experience #${[val]}`
+      ).value = "";
     });
   }
 
   onClickBtn(event, type) {
     if (type === "experience") return this.addExperience();
-    console.log(type);
+    if (type === "education") return this.addEducation();
   }
 
   onImageChange = (event) => {
@@ -74,8 +113,21 @@ class App extends React.Component {
   };
 
   updateState = (event) => {
-    if(event.target['data-type'] = "experience") this.setState({experience: { ...this.state.experience, [event.target.name]: event.target.value }});
-    else this.setState({ [event.target.name]: event.target.value });
+    if (event.target.dataset.type == "experience")
+      return this.setState({
+        experience: {
+          ...this.state.experience,
+          [event.target.name]: event.target.value,
+        },
+      });
+    if (event.target.dataset.type == "education")
+      return this.setState({
+        education: {
+          ...this.state.education,
+          [event.target.name]: event.target.value,
+        },
+      });
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {

@@ -101,15 +101,25 @@ main {
       }
     }
 
-    & .experience {
+    & .experience-and-education {
       display: relative;
       background-color: #f9f6ef;
       padding-top: 200px;
       padding-left: 40px;
 
-      & > div {
-        & h2 {
-          margin: 0;
+      & .experience {
+        & > div {
+          & h2 {
+            margin: 0;
+          }
+        }
+      }
+
+      & .education {
+        & > div {
+          & h2 {
+            margin: 0;
+          }
         }
       }
     }
