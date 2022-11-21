@@ -147,7 +147,9 @@ class App extends React.Component {
             onButtonClicked={this.onClickBtn}
             onImageChange={this.onImageChange}
           />
-          <CVPreview state={this.state} />
+          <div className="center">
+            <CVPreview state={this.state} />
+          </div>
         </main>
       </div>
     );

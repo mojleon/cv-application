@@ -15,8 +15,8 @@ class Print extends Component {
             return <button>{this.props.value}</button>
           }}
           content={()=>this.componentRef}
-          documentTitle="new document"
-          pageStyle="{{background: red}"
+          documentTitle="CV"
+          copyStyles={true}
           />
           <div className="hide">
             <div ref={el=>{this.componentRef=el}}>
