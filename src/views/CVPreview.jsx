@@ -7,7 +7,8 @@ import House from "@images/house.svg";
 
 class CVPreview extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
+    console.log(props.state)
   }
 
   render() {
@@ -35,8 +36,18 @@ class CVPreview extends React.Component {
                 </div>
               </div>
               <hr />
+              <div className="expertise">
+                <h1>Expertise</h1>
+                <ul>
+                  {this.props.state.expertises.map((item, index) => (
+                  <li key={index}>
+                      {item}
+                  </li>
+                ))}
+              </ul>
+              </div>
             </section>
-            <div className="expertise"></div>
+           
           </div>
           <div className="experience-and-education">
             <div className="experience">

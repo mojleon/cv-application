@@ -31,7 +31,6 @@ class ContactInformation extends React.Component {
           name="adress"
           onStateChange={this.props.onStateChange}
         />
-        <h3>Profile picture</h3>
         <Image
           placeholder="Image"
           name="image"

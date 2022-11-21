@@ -23,7 +23,12 @@ class PersonalInformation extends React.Component {
           />
           <div id="expertise">
             <h1>Expertise</h1>
-            <Input placeholder="Expertise" type="text" />
+            <Input name="expertise" placeholder="Expertise" type="text" onStateChange={this.props.onStateChange}/>
+            <Button
+              type="expertise"
+              value="ADD"
+              onButtonClicked={this.props.onButtonClicked}
+            />
           </div>
           <Experience
             onStateChange={this.props.onStateChange}

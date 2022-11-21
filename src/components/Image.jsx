@@ -7,11 +7,13 @@ class Image extends Component {
 
   render() {
     return (
-      <div className="input">
+      <div>
+        <label htmlFor={this.props.name} id="image-label">UPLOAD IMAGE</label>
         <input
           onChange={this.props.onImageChange}
           type="file"
           name={this.props.name}
+          id={this.props.name}
         />
       </div>
     );

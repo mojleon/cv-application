@@ -18,6 +18,9 @@ class App extends React.Component {
       description: `Prolific, full stack web developer with a passion for metrics and beating former "best-yets." Prototyped 25 new product features per year for Flexor, Inc. Decreased rework by 22% and costs by 15%. Consistently receive high user experience scores for all web development projects, including a 55% increase for Flexor, Inc. Passionate about building world class web applications. One of my sites received a 2015 Webby for Best Navigation and Structure.`,
       image: null,
 
+      expertise: '',
+      expertises: [],
+
       experience: {
         position: "",
         company: "",
@@ -39,13 +42,20 @@ class App extends React.Component {
       },
 
       educations: [],
-
-      componentRef: null
     };
 
     this.updateState = this.updateState.bind(this);
     this.onClickBtn = this.onClickBtn.bind(this);
     this.onImageChange = this.onImageChange.bind(this);
+  }
+
+  addExpertise() {
+    this.setState({
+      expertises: [...this.state.expertises, this.state.expertise],
+    });
+
+    this.state.expertise = '';
+    document.querySelector("#expertise input").value = '';
   }
 
   addExperience() {
@@ -103,11 +113,7 @@ class App extends React.Component {
   onClickBtn(event, type) {
     if (type === "experience") return this.addExperience();
     if (type === "education") return this.addEducation();
-    if (type === "print") return this.print();
-  }
-
-  print() {
-    console.log('print');
+    if (type === "expertise") return this.addExpertise();
   }
 
   onImageChange = (event) => {
