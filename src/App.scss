@@ -3,6 +3,17 @@ $path--rel: "../public";
 $alpha-yellow: rgba(46, 58, 89, 0.85);
 $yellow: #2e3a59;
 
+@media print {
+  #cv-preview {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.hide {
+  display: none;
+}
+
 main {
   display: flex;
   display: grid;

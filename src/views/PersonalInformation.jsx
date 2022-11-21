@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Input from "../components/Input";
-import Textarea from "../components/Textarea";
-import Image from "../components/Image";
 import Button from "../components/Button";
 import NameAndJob from "./PersonalInformation/NameAndJob";
 import ContactInformation from "./PersonalInformation/ContactInformation";
 import Experience from "./PersonalInformation/Experience";
+import Print from "../components/Print";
+
 class PersonalInformation extends React.Component {
   constructor(props) {
     super(props);
@@ -78,8 +78,7 @@ class PersonalInformation extends React.Component {
           </div>
           <div id="generate">
             <h1>Generate</h1>
-            <Button type="generate-pdf" value="Generate PDF" />
-            <Button type="reset" value="Reset" />
+            <Print type="print" value="Generate PDF" onButtonClicked={this.props.onButtonClicked} state={this.props.state}/>
           </div>
         </div>
       </div>

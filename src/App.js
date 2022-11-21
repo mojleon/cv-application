@@ -39,6 +39,8 @@ class App extends React.Component {
       },
 
       educations: [],
+
+      componentRef: null
     };
 
     this.updateState = this.updateState.bind(this);
@@ -101,6 +103,11 @@ class App extends React.Component {
   onClickBtn(event, type) {
     if (type === "experience") return this.addExperience();
     if (type === "education") return this.addEducation();
+    if (type === "print") return this.print();
+  }
+
+  print() {
+    console.log('print');
   }
 
   onImageChange = (event) => {
