@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 
-class CVPreview extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function CVPreview(props) {
     return (
       <div className="education">
         <h1>Education</h1>
-        {this.props.educations.map((item, index) => (
+        {props.educations.map((item, index) => (
           <div key={index}>
             <h2>{item.university}</h2>
             <h3>{item.subject}</h3>
@@ -20,7 +15,6 @@ class CVPreview extends React.Component {
         ))}
       </div>
     );
-  }
 }
 
 export default CVPreview;

@@ -1,24 +1,18 @@
 import React, { Component } from "react";
 
-class Input extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function Input(props) {
     return (
       <div className="input">
         <input
-          onChange={this.props.onStateChange}
-          placeholder={this.props.placeholder}
-          type={this.props.type}
-          data-type={this.props.dataType}
-          id={this.props.name}
-          name={this.props.name}
+          onChange={props.onStateChange}
+          placeholder={props.placeholder}
+          type={props.type}
+          data-type={props.dataType}
+          id={props.name}
+          name={props.name}
         />
       </div>
     );
-  }
 }
 
 export default Input;

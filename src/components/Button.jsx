@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 
-class Button extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function Button(props) {
     return (
       <div className="input">
         <button
           onClick={(event) =>
-            this.props.onButtonClicked(event, this.props.type)
+            props.onButtonClicked(event, props.type)
           }
         >
-          {this.props.value}
+          {props.value}
         </button>
       </div>
     );
-  }
 }
 
 export default Button;

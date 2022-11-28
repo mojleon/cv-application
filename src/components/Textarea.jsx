@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 
-class Textarea extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function Textarea(props) {
     return (
       <div className="input">
         <textarea
-          placeholder={this.props.placeholder}
-          name={this.props.name}
-          id={this.props.name}
-          data-type={this.props.dataType}
-          onChange={this.props.onStateChange}
+          placeholder={props.placeholder}
+          name={props.name}
+          id={props.name}
+          data-type={props.dataType}
+          onChange={props.onStateChange}
         />
       </div>
     );
-  }
 }
 
 export default Textarea;

@@ -1,23 +1,17 @@
 import React, { Component, useState } from "react";
 
-class Image extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function Image(props) {
     return (
       <div>
-        <label htmlFor={this.props.name} id="image-label">UPLOAD IMAGE</label>
+        <label htmlFor={props.name} id="image-label">UPLOAD IMAGE</label>
         <input
-          onChange={this.props.onImageChange}
+          onChange={props.onImageChange}
           type="file"
-          name={this.props.name}
-          id={this.props.name}
+          name={props.name}
+          id={props.name}
         />
       </div>
     );
-  }
 }
 
 export default Image;

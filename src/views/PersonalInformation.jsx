@@ -8,46 +8,40 @@ import Education from "./PersonalInformation/Education";
 import Expertise from "./PersonalInformation/Expertise";
 import Print from "../components/Print";
 
-class PersonalInformation extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+function PersonalInformation(props) {
     return (
       <div className="App">
         <div id="personal-information">
           <h1>Personal Information</h1>
-          <NameAndJob onStateChange={this.props.onStateChange} />
+          <NameAndJob onStateChange={props.onStateChange} />
           <ContactInformation
-            onStateChange={this.props.onStateChange}
-            onImageChange={this.props.onImageChange}
+            onStateChange={props.onStateChange}
+            onImageChange={props.onImageChange}
           />
           <Expertise
-            onStateChange={this.props.onStateChange}
-            onImageChange={this.props.onImageChange}
-            onButtonClicked={this.props.onButtonClicked}
+            onStateChange={props.onStateChange}
+            onImageChange={props.onImageChange}
+            onButtonClicked={props.onButtonClicked}
           />
           <Experience
-            onStateChange={this.props.onStateChange}
-            onImageChange={this.props.onImageChange}
-            onButtonClicked={this.props.onButtonClicked}
+            onStateChange={props.onStateChange}
+            onImageChange={props.onImageChange}
+            onButtonClicked={props.onButtonClicked}
           />
           <Education
-            onStateChange={this.props.onStateChange}
-            onImageChange={this.props.onImageChange}
-            onButtonClicked={this.props.onButtonClicked}
+            onStateChange={props.onStateChange}
+            onImageChange={props.onImageChange}
+            onButtonClicked={props.onButtonClicked}
           />
           <Print
             type="print"
             value="Generate PDF"
-            onButtonClicked={this.props.onButtonClicked}
-            state={this.props.state}
+            onButtonClicked={props.onButtonClicked}
+            state={props.state}
           />
         </div>
       </div>
     );
-  }
 }
 
 export default PersonalInformation;
