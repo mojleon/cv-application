@@ -6,6 +6,19 @@ function Expertise(props) {
     return (
       <div id="expertise">
         <h1>Expertise</h1>
+          {props.expertises.map((item, index, value) => (
+            <div key={index}>
+              <Input
+                name="expertise"
+                placeholder="Expertise"
+                type="text"
+                dataType="expertises"
+                value={value[index]}
+                index={index}
+                onStateChange={props.onExistingStateChange}
+              />
+            </div>
+          ))}
         <Input
           name="expertise"
           placeholder="Expertise"

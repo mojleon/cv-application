@@ -8,6 +8,8 @@ function Input(props) {
           placeholder={props.placeholder}
           type={props.type}
           data-type={props.dataType}
+          data-index={props.index}
+          value={props.value}
           id={props.name}
           name={props.name}
         />

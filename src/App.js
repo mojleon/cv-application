@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import update from 'react-addons-update';
 
 import "./App.scss";
 import PersonalInformation from "./views/PersonalInformation";
@@ -47,6 +48,7 @@ class App extends React.Component {
     this.updateState = this.updateState.bind(this);
     this.onClickBtn = this.onClickBtn.bind(this);
     this.onImageChange = this.onImageChange.bind(this);
+    this.updateExistingState = this.updateExistingState.bind(this);
   }
 
   addExpertise() {
@@ -125,18 +127,49 @@ class App extends React.Component {
     }
   };
 
+
+
+
+
+
+  
+
+  updateExistingState = (event) => {
+    const type = event.target.dataset.type;
+    const index = event.target.dataset.index;
+    // this.setState({'expertises': [this.state[type][index], event.target.value]});
+    // console.log(this.state[type][index],type ,  event.target.value)
+
+    const expertises = this.state[type][index];
+    this.setState(update(
+      this.state, { 
+        expertises: {
+          [index]: {
+        $set: event.target.value
+          }
+        }
+      }
+    ))
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
   updateState = (event) => {
-    if (event.target.dataset.type == "experience")
-      return this.setState({
-        experience: {
-          ...this.state.experience,
-          [event.target.name]: event.target.value,
-        },
-      });
-    if (event.target.dataset.type == "education")
-      return this.setState({
-        education: {
-          ...this.state.education,
+    const type = event.target.dataset.type 
+    if (event.target.dataset.type !== undefined) 
+    return this.setState({
+        [type]: {
+          ...this.state[type],
           [event.target.name]: event.target.value,
         },
       });
@@ -150,6 +183,7 @@ class App extends React.Component {
           <PersonalInformation
             state={this.state}
             onStateChange={this.updateState}
+            onExistingStateChange={this.updateExistingState}
             onButtonClicked={this.onClickBtn}
             onImageChange={this.onImageChange}
           />

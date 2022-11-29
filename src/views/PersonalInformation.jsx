@@ -20,8 +20,10 @@ function PersonalInformation(props) {
           />
           <Expertise
             onStateChange={props.onStateChange}
+            onExistingStateChange={props.onExistingStateChange}
             onImageChange={props.onImageChange}
             onButtonClicked={props.onButtonClicked}
+            expertises={props.state.expertises}
           />
           <Experience
             onStateChange={props.onStateChange}
