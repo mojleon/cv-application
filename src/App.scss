@@ -26,6 +26,22 @@ main {
 
   gap: 16px;
 
+  & .input {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .delete-button {
+      position: absolute;
+      border-radius: 8px;
+      right: 4px;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+  }
+
   & input,
   & textarea,
   & button,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import update from 'react-addons-update';
+import update from "react-addons-update";
 
 import "./App.scss";
 import PersonalInformation from "./views/PersonalInformation";
@@ -45,10 +45,11 @@ class App extends React.Component {
       educations: [],
     };
 
-    this.updateState = this.updateState.bind(this);
-    this.onClickBtn = this.onClickBtn.bind(this);
+    this.onStateChange = this.onStateChange.bind(this);
+    this.onButtonClicked = this.onButtonClicked.bind(this);
+    this.onDeleteButtonClicked = this.onDeleteButtonClicked.bind(this);
     this.onImageChange = this.onImageChange.bind(this);
-    this.updateExistingState = this.updateExistingState.bind(this);
+    this.onExistingStateChange = this.onExistingStateChange.bind(this);
   }
 
   addExpertise() {
@@ -112,10 +113,14 @@ class App extends React.Component {
     });
   }
 
-  onClickBtn(event, type) {
+  onButtonClicked(event, type) {
     if (type === "experience") return this.addExperience();
     if (type === "education") return this.addEducation();
     if (type === "expertise") return this.addExpertise();
+  }
+
+  onDeleteButtonClicked(event, type) {
+    console.log("delete!");
   }
 
   onImageChange = (event) => {
@@ -127,47 +132,28 @@ class App extends React.Component {
     }
   };
 
-
-
-
-
-
-  
-
-  updateExistingState = (event) => {
+  onExistingStateChange = (event) => {
     const type = event.target.dataset.type;
     const index = event.target.dataset.index;
     // this.setState({'expertises': [this.state[type][index], event.target.value]});
     // console.log(this.state[type][index],type ,  event.target.value)
 
     const expertises = this.state[type][index];
-    this.setState(update(
-      this.state, { 
+    this.setState(
+      update(this.state, {
         expertises: {
           [index]: {
-        $set: event.target.value
-          }
-        }
-      }
-    ))
+            $set: event.target.value,
+          },
+        },
+      })
+    );
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-  updateState = (event) => {
-    const type = event.target.dataset.type 
-    if (event.target.dataset.type !== undefined) 
-    return this.setState({
+  onStateChange = (event) => {
+    const type = event.target.dataset.type;
+    if (event.target.dataset.type !== undefined)
+      return this.setState({
         [type]: {
           ...this.state[type],
           [event.target.name]: event.target.value,
@@ -182,10 +168,12 @@ class App extends React.Component {
         <main>
           <PersonalInformation
             state={this.state}
-            onStateChange={this.updateState}
-            onExistingStateChange={this.updateExistingState}
-            onButtonClicked={this.onClickBtn}
+            onStateChange={this.onStateChange}
+            onExistingStateChange={this.onExistingStateChange}
+            onButtonClicked={this.onButtonClicked}
             onImageChange={this.onImageChange}
+            onDeleteButtonClicked={this.onDeleteButtonClicked}
+            deleteButton={true}
           />
           <div className="center">
             <CVPreview state={this.state} />
