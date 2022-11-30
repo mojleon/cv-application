@@ -11,7 +11,7 @@ function Input(props) {
         data-type={props.dataType}
         data-index={props.index}
         value={props.value}
-        id={props.name}
+        id={props.id}
         name={props.name}
       />
       {props.onDeleteButtonClicked ? (

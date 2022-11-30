@@ -52,13 +52,14 @@ class App extends React.Component {
     this.onExistingStateChange = this.onExistingStateChange.bind(this);
   }
 
-  addExpertise() {
+  addExpertise(forId) {
+    console.log(forId);
     this.setState({
       expertises: [...this.state.expertises, this.state.expertise],
     });
 
     this.state.expertise = "";
-    document.querySelector("#expertise input").value = "";
+    document.querySelector(`#expertise #${forId}`).value = "";
   }
 
   addExperience() {
@@ -97,7 +98,6 @@ class App extends React.Component {
 
   clearEducationValues(education) {
     Object.keys(education).forEach((val) => {
-      this.state.education[val] = "";
       document.querySelector(
         `#personal-information #education #${[val]}`
       ).value = "";
@@ -113,10 +113,11 @@ class App extends React.Component {
     });
   }
 
-  onButtonClicked(event, type) {
+  onButtonClicked(event, type, forId) {
+    console.log('onButtonClicked');
     if (type === "experience") return this.addExperience();
     if (type === "education") return this.addEducation();
-    if (type === "expertise") return this.addExpertise();
+    if (type === "expertise") return this.addExpertise(forId);
   }
 
   onDeleteButtonClicked = (event) => {

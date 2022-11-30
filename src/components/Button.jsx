@@ -5,7 +5,7 @@ function Button(props) {
       <div className="input">
         <button
           onClick={(event) =>
-            props.onButtonClicked(event, props.type)
+            props.onButtonClicked(event, props.type, props.forId)
           }
         >
           {props.value}

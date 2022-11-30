@@ -24,11 +24,13 @@ function Expertise(props) {
           name="expertise"
           placeholder="Expertise"
           type="text"
+          id="expertise-input"
           onStateChange={props.onStateChange}
         />
         <Button
           type="expertise"
           value="ADD"
+          forId="expertise-input"
           onButtonClicked={props.onButtonClicked}
         />
       </div>
