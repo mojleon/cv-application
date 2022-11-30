@@ -5,6 +5,8 @@ function DeleteButton(props) {
     <div
       className="delete-button"
       onClick={(event) => props.onDeleteButtonClicked(event, props.type)}
+      data-type={props.dataType}
+      data-index={props.dataIndex}
     >
       X
     </div>

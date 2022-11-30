@@ -15,7 +15,7 @@ function Input(props) {
         name={props.name}
       />
       {props.onDeleteButtonClicked ? (
-        <DeleteButton onDeleteButtonClicked={props.onDeleteButtonClicked} />
+        <DeleteButton onDeleteButtonClicked={props.onDeleteButtonClicked} dataType={props.dataType} dataIndex={props.index}/>
       ) : null}
     </div>
   );

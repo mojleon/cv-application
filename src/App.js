@@ -119,8 +119,11 @@ class App extends React.Component {
     if (type === "expertise") return this.addExpertise();
   }
 
-  onDeleteButtonClicked(event, type) {
-    console.log("delete!");
+  onDeleteButtonClicked = (event) => {
+    const type = event.target.dataset.type;
+    const index = event.target.dataset.index;
+    const expertises = this.state[type]
+    this.setState({[type]: expertises.filter((_, i) => i != index )});
   }
 
   onImageChange = (event) => {
@@ -135,8 +138,8 @@ class App extends React.Component {
   onExistingStateChange = (event) => {
     const type = event.target.dataset.type;
     const index = event.target.dataset.index;
-    // this.setState({'expertises': [this.state[type][index], event.target.value]});
-    // console.log(this.state[type][index],type ,  event.target.value)
+    
+    console.log(type, index);
 
     const expertises = this.state[type][index];
     this.setState(
