@@ -6,7 +6,7 @@ function Expertise(props) {
     return (
       <div id="expertise">
         <h1>Expertise</h1>
-          {props.expertises.map((item, index, value) => (
+          {props.expertises.map((_, index, value) => (
             <div key={index}>
               <Input
                 name="expertise"

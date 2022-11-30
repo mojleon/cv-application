@@ -30,11 +30,15 @@ function PersonalInformation(props) {
           onStateChange={props.onStateChange}
           onImageChange={props.onImageChange}
           onButtonClicked={props.onButtonClicked}
+          experiences={props.state.experiences}
+          onDeleteButtonClicked={props.onDeleteButtonClicked}
         />
         <Education
           onStateChange={props.onStateChange}
           onImageChange={props.onImageChange}
           onButtonClicked={props.onButtonClicked}
+          educations={props.state.educations}
+          onDeleteButtonClicked={props.onDeleteButtonClicked}
         />
         <Print
           type="print"

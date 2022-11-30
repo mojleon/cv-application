@@ -53,7 +53,6 @@ class App extends React.Component {
   }
 
   addExpertise(forId) {
-    console.log(forId);
     this.setState({
       expertises: [...this.state.expertises, this.state.expertise],
     });
@@ -114,7 +113,8 @@ class App extends React.Component {
   }
 
   onButtonClicked(event, type, forId) {
-    console.log('onButtonClicked');
+    if(event.target.innerHTML !== 'ADD') this.onDeleteButtonClicked(event);
+    
     if (type === "experience") return this.addExperience();
     if (type === "education") return this.addEducation();
     if (type === "expertise") return this.addExpertise(forId);
@@ -124,6 +124,7 @@ class App extends React.Component {
     const type = event.target.dataset.type;
     const index = event.target.dataset.index;
     const expertises = this.state[type]
+    console.log(type, index, expertises);
     this.setState({[type]: expertises.filter((_, i) => i != index )});
   }
 
@@ -140,8 +141,6 @@ class App extends React.Component {
     const type = event.target.dataset.type;
     const index = event.target.dataset.index;
     
-    console.log(type, index);
-
     const expertises = this.state[type][index];
     this.setState(
       update(this.state, {

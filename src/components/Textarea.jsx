@@ -4,6 +4,7 @@ function Textarea(props) {
     return (
       <div className="input">
         <textarea
+          value={props.value}
           placeholder={props.placeholder}
           name={props.name}
           id={props.name}
