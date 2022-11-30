@@ -26,6 +26,16 @@ main {
 
   gap: 16px;
 
+  & .template-2-grid {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & .input {
+      width: 100%;
+    }
+  }
+
   & .input {
     position: relative;
     display: flex;

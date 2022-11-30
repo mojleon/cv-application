@@ -75,7 +75,7 @@ class App extends React.Component {
       experiences: [...this.state.experiences, experience],
     });
 
-    this.clearExperienceValues(experience);
+    this.clearOriginalValues('original-experiences', experience);
   }
 
   addEducation() {
@@ -92,31 +92,37 @@ class App extends React.Component {
       educations: [...this.state.educations, education],
     });
 
-    this.clearEducationValues(education);
+    this.clearOriginalValues('original-education', education);
+  }
+
+  clearOriginalValues(originalInputs, keys) {
+    Object.keys(keys).forEach((val) => {
+      this.state.experience[val] = "";
+    });
+
+    const domQuery = document.querySelectorAll(
+      `.${originalInputs} input, .${originalInputs} textarea`
+    );
+
+    for(let i = 0; i < domQuery.length; i++) {
+      domQuery[i].value = '';
+    }
   }
 
   clearEducationValues(education) {
     Object.keys(education).forEach((val) => {
+      console.log(val);
       document.querySelector(
-        `#personal-information #education #${[val]}`
-      ).value = "";
-    });
-  }
-
-  clearExperienceValues(experience) {
-    Object.keys(experience).forEach((val) => {
-      this.state.experience[val] = "";
-      document.querySelector(
-        `#personal-information #experience #${[val]}`
+        `#personal-information #original-education #${[val]}`
       ).value = "";
     });
   }
 
   onButtonClicked(event, type, forId) {
-    if(event.target.innerHTML !== 'ADD') this.onDeleteButtonClicked(event);
+    if(event.target.innerHTML !== 'ADD') return this.onDeleteButtonClicked(event);
     
-    if (type === "experience") return this.addExperience();
-    if (type === "education") return this.addEducation();
+    if (type === "experience") return this.addExperience(forId);
+    if (type === "education") return this.addEducation(forId);
     if (type === "expertise") return this.addExpertise(forId);
   }
 
