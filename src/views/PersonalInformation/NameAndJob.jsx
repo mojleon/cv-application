@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import Input from "../../components/Input";
 import Textarea from "../../components/Textarea";
 

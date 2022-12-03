@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import update from "react-addons-update";
 
 import "./App.scss";
@@ -75,7 +75,7 @@ class App extends React.Component {
       experiences: [...this.state.experiences, experience],
     });
 
-    this.clearOriginalValues('original-experiences', experience);
+    this.clearOriginalValues("original-experiences", experience);
   }
 
   addEducation() {
@@ -92,7 +92,7 @@ class App extends React.Component {
       educations: [...this.state.educations, education],
     });
 
-    this.clearOriginalValues('original-education', education);
+    this.clearOriginalValues("original-education", education);
   }
 
   clearOriginalValues(originalInputs, keys) {
@@ -104,14 +104,13 @@ class App extends React.Component {
       `.${originalInputs} input, .${originalInputs} textarea`
     );
 
-    for(let i = 0; i < domQuery.length; i++) {
-      domQuery[i].value = '';
+    for (let i = 0; i < domQuery.length; i++) {
+      domQuery[i].value = "";
     }
   }
 
   clearEducationValues(education) {
     Object.keys(education).forEach((val) => {
-      console.log(val);
       document.querySelector(
         `#personal-information #original-education #${[val]}`
       ).value = "";
@@ -119,8 +118,9 @@ class App extends React.Component {
   }
 
   onButtonClicked(event, type, forId) {
-    if(event.target.innerHTML !== 'ADD') return this.onDeleteButtonClicked(event);
-    
+    if (event.target.innerHTML !== "ADD")
+      return this.onDeleteButtonClicked(event);
+
     if (type === "experience") return this.addExperience(forId);
     if (type === "education") return this.addEducation(forId);
     if (type === "expertise") return this.addExpertise(forId);
@@ -129,10 +129,9 @@ class App extends React.Component {
   onDeleteButtonClicked = (event) => {
     const type = event.target.dataset.type;
     const index = event.target.dataset.index;
-    const expertises = this.state[type]
-    console.log(type, index, expertises);
-    this.setState({[type]: expertises.filter((_, i) => i != index )});
-  }
+    const expertises = this.state[type];
+    this.setState({ [type]: expertises.filter((_, i) => i != index) });
+  };
 
   onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -146,7 +145,7 @@ class App extends React.Component {
   onExistingStateChange = (event) => {
     const type = event.target.dataset.type;
     const index = event.target.dataset.index;
-    
+
     const expertises = this.state[type][index];
     this.setState(
       update(this.state, {

@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import DeleteButton from "./DeleteButton";
 
 function Input(props) {
@@ -15,7 +14,11 @@ function Input(props) {
         name={props.name}
       />
       {props.onDeleteButtonClicked ? (
-        <DeleteButton onDeleteButtonClicked={props.onDeleteButtonClicked} dataType={props.dataType} dataIndex={props.index}/>
+        <DeleteButton
+          onDeleteButtonClicked={props.onDeleteButtonClicked}
+          dataType={props.dataType}
+          dataIndex={props.index}
+        />
       ) : null}
     </div>
   );

@@ -1,6 +1,3 @@
-import React, { Component } from "react";
-import Input from "../components/Input";
-import Button from "../components/Button";
 import NameAndJob from "./PersonalInformation/NameAndJob";
 import ContactInformation from "./PersonalInformation/ContactInformation";
 import Experience from "./PersonalInformation/Experience";
